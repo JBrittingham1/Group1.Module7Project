@@ -1,0 +1,6 @@
+/* APPLIED TO TEST.HTML FILE ONLY */
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
