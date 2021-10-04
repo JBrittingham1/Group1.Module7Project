@@ -9,6 +9,8 @@
 </head>
 <body>
     <button id="getQuote">Get Quote</button>
+    <button id="getScore">Get Score</button>
+   
 
         <div class="container">
 
@@ -16,12 +18,30 @@
                 <h3>Kanye:</h3>
                 <div id=westQuote></div>
                 <div id=westGiphy></div>
+                <button id="kanyeVote">Vote</button>
             </div>
             <div >
                 <h3>Ron:</h3>
                 <div id="swansonQuote"></div>
                 <div id=swansonGiphy></div>
+                <button id="ronVote">Vote</button>
             </div>
+
+            <!-- MODAL -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p><span id="winnerName"></span> won this time! Who'll win next? </p>
+                </div>
+            </div>
+
+            <div id="scoreModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-2">&times;</span>
+                    <p>The current score is: <span id="score"></span></p>
+                </div>
+            </div>
+            
 
         </div>
 
