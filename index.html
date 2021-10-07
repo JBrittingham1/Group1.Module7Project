@@ -18,47 +18,60 @@
         <!--<h1 class="top-bar-right">You Decide!</h1>-->
     </div>
 
-    <main class="container">
+    <div class="grid-container quote-cards">
         <div class="grid-x">
-            
-            <div id="kanyecard" class="small-6 cell card">
-                <h3 class="card-divider">Kanye:</h3>
-                <div id="westQuote" class="quoteBox"></div>
-                <div id="westGiphy" class="gifBox"></div>
-                <button id="kanyeVote" class="button">Vote</button>
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="kanyecard" class="card">
+                    <h3 class="card-divider">Kanye:</h3>
+                    <div id="westGiphy" class="gifBox"></div>
+                    <div id="westQuote" class="quoteBox"></div>
+                    <div class="vote-button">
+                    <button id="kanyeVote" class="button">Vote</button>
+                    </div>
+                </div>
             </div>
-            <div id="swansoncard" class="small-6 cell card">
-                <h3 class="card-divider">Ron:</h3>
-                <div id="swansonQuote" class="quoteBox"></div>
-                <div id="swansonGiphy" class="gifBox"></div>
-                <button id="ronVote" class="button">Vote</button>
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="swansoncard" class="card">
+                    <h3 class="card-divider">Ron:</h3>
+                    <div id="swansonGiphy" class="gifBox"></div>
+                    <div id="swansonQuote" class="quoteBox"></div>
+                    <div class="vote-button">
+                    <button id="ronVote" class="button">Vote</button>
+                    </div>
+                </div>
             </div>
-        <div class="grid-x" class="button-class">
-            <div class="small-6 cell align-center">
+            <div class="large-2 cell"></div>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-x button-class">
+            <div class="cell text-center">
                 <button id="getQuote" class="button">Get Quotes</button>
                 <button id="getScore" class="button">Get Score</button>
             </div>
         </div>
-            <!--MODAL --> 
-        
-            <div id="modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p><span id="winnerName"></span> won this time! Who'll win next? </p>
-                </div>
-            </div>
+    </div>
+        <!--MODAL -->
 
-            <div id="scoreModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-2">&times;</span>
-                    <p>The current score is: <span id="score"></span></p>
-                </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p><span id="winnerName"></span> won this time! Who'll win next? </p>
             </div>
         </div>
-    </main>
+
+        <div id="scoreModal" class="modal">
+            <div class="modal-content">
+                <span class="close-2">&times;</span>
+                <p>The current score is: <span id="score"></span></p>
+            </div>
+        </div>
 
 
-    <script src="assets/js/script.js"></script>
+
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>

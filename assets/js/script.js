@@ -71,13 +71,13 @@ var getGif = function(event) {
             response.json().then(function(data) {
                 // console.log(data);
                 // console.log(data.data[0].images.fixed_width.url);
-                var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_width.url;
+                var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 // console.log(randomWestGif);
                 westGifEl.innerHTML = "";
                 var westGifImg = document.createElement('img');
                 westGifImg.setAttribute('src', randomWestGif);
+                westGifImg.setAttribute('width', '100');
                 westGifEl.appendChild(westGifImg);
-
             })
         }
     });
@@ -88,11 +88,12 @@ var getGif = function(event) {
             response.json().then(function(data) {
                 // console.log(data);
                 // console.log(data.data[0].images.fixed_width.url);
-                var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_width.url;
+                var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 // console.log(randomSwansonGif);
                 swansonGifEl.innerHTML = "";
                 var swansonGifImg = document.createElement('img');
                 swansonGifImg.setAttribute('src', randomSwansonGif);
+                swansonGifImg.setAttribute('width', '100');
                 swansonGifEl.appendChild(swansonGifImg);
             })
         }
