@@ -23,7 +23,7 @@ var vsCounter = [];
 var btnHandler = function(event) {
     westQuoteEl.textContent = "";
     swansonQuoteEl.textContent = "";
-
+    displayVoteButtons();
     getQuote();
     getGif();
 }
@@ -31,6 +31,12 @@ var btnHandler = function(event) {
 var getScoreHandler = function(event) {
     getScores();
 };
+
+//function to display vote buttons
+var displayVoteButtons = function(event) {
+    kanyeVoteBtnEl.classList.remove('hidden');
+    ronVoteBtnEl.classList.remove('hidden');
+}
 
 // function to get quotes
 var getQuote = function(event) {
@@ -205,16 +211,16 @@ var getScores = function(event) {
     }
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
+    //span.onclick = function() {
+    //modal.style.display = "none";
+   // }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    }
+    //window.onclick = function(event) {
+    //if (event.target == modal) {
+   //     modal.style.display = "none";
+    //}
+    //}
 
 
 
@@ -226,7 +232,7 @@ var getScores = function(event) {
 // click button event
 searchBtnEl.addEventListener("click", btnHandler, getQuote, getGif);
 
-scoreBtnEl.addEventListener("click", getScores);
+//scoreBtnEl.addEventListener("click", getScores);
 
 
 kanyeVoteBtnEl.addEventListener("click", kanyeWins);
