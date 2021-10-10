@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <title>Mod1 Project</title>
 </head>
+
 <body>
-    <button id="getQuote">Get Quote</button>
-    <button id="getScore">Get Score</button>
-   
 
-        <div class="container">
+    <div class="grid-x top-bar title">
+        <h1 class="cell text-center">Who Is The Greatest Philosopher Of Our Time?</h1>
+    </div>
 
-            <div >
-                <h3>Kanye:</h3>
-                <div id=westQuote></div>
-                <div id=westGiphy></div>
-                <button id="kanyeVote">Vote</button>
-            </div>
-            <div >
-                <h3>Ron:</h3>
-                <div id="swansonQuote"></div>
-                <div id=swansonGiphy></div>
-                <button id="ronVote">Vote</button>
-            </div>
-
-            <!-- MODAL -->
-            <div id="modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p><span id="winnerName"></span> won this time! Who'll win next? </p>
+    <div class="grid-container quote-cards">
+        <div class="grid-x">
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="kanyecard" class="card">
+                    <h3 class="card-divider">Kanye West</h3>
+                    <div id="westGiphy" class="gifBox"></div>
+                    <div id="westQuote" class="quoteBox"></div>
+                    <div class="vote-button">
+                    <button id="kanyeVote" class="button hidden">Vote For Kanye!</button>
+                    </div>
                 </div>
             </div>
-
-            <div id="scoreModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-2">&times;</span>
-                    <p>The current score is: <span id="score"></span></p>
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="swansoncard" class="card">
+                    <h3 class="card-divider">Ron Swanson</h3>
+                    <div id="swansonGiphy" class="gifBox"></div>
+                    <div id="swansonQuote" class="quoteBox"></div>
+                    <div class="vote-button">
+                    <button id="ronVote" class="button hidden">Vote For Ron!</button>
+                    </div>
                 </div>
             </div>
-            
+            <div class="large-2 cell"></div>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-x button-class">
+            <div class="cell text-center">
+                <button id="getQuote" class="button">Get Quotes</button>
+                <button id="clearScores" class="button">Clear Scores</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid-container">
+        <div class="grid-x score-class">
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="kanye-score-card" class="card scorecard">
+                    <h3 class="card-divider">Kanye's Score:</h3>
+                    <div id="kanye-score"></div>
+                </div>
+            </div>
+            <div class="large-2 cell"></div>
+            <div class="large-3 cell">
+                <div id="ron-score-card" class="card scorecard">
+                    <h3 class="card-divider">Ron's Score:</h3>
+                    <div id="ron-score"></div>
+                </div>
+            </div>
+            <div class="large-2 cell"></div>
+        </div>
+    </div>
+        <!--MODAL 
 
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p><span id="winnerName"></span> won this time! Who'll win next? </p>
+            </div>
         </div>
 
-    
-    <script src="script.js"></script>
+        <div id="scoreModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-2">&times;</span>
+                <p>The current score is: <span id="score"></span></p>
+            </div>
+        </div> -->
+
+
+
+        <script src="assets/js/script.js"></script>
 </body>
+
 </html>
