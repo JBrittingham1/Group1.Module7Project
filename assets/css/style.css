@@ -1,55 +1,78 @@
 :root {
-  --black: #0B0C10;
-  --dark-gray: #1F2833;
-  --light-gray: #C5C6C7;
-  --light-blue: #66FCF1;
-  --dark-blue: #45A29E;
+  --color-1: #4059ad;
+  --color-2: #219ebc;
+  --color-3: #0d1321;
+  --color-4: #30343f;
+  --color-5: #e4dfda;
 }
 
 body {
-  background-color: var(--dark-gray) !important;
+  background-image: url('../images/background.jpg') !important;
 }
 
 .title {
-  background-color: var(--black) !important;
-  color: var(--light-gray) !important;
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
+  background-color: var(--color-3) !important;
+  color: var(--color-5) !important;
 }
 
 .quote-cards {
-  padding-top: 2%;
+  padding-top: .3%;
 }
 
 .card {
   max-height: 750px;
+  background-color: var(--color-3);
+  border: none !important;
 }
 
-.scorecard {
-  height: 150px;
-}
-
-.gifBox {
-  background-color: var(--dark-blue);
+.card-divider {
+  background-color: var(--color-3) !important;
+  color: var(--color-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px !important;
 }
 
 .quoteBox {
-  height: 150px;
-  background-color: var(--light-blue);
+  height: 190px;
+  background-color: var(--color-4);
+  display: flex;
+  padding: 5px;
+  color: var(--color-5);
+  justify-content: center;
+  align-items: center;
 }
 
 .vote-button {
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gifBox {
   width: 100%;
-  height: 150px;
+  height: 245px;
   object-fit: contain;
   align-content: center;
+  background-color: var(--color-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scorecard {
+  height: 150px;
+  background-color: var(--color-4) !important;
+  color: var(--color-5) !important;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
 }
 
 .button-class {
@@ -57,63 +80,23 @@ body {
   width: 100%;
 }
 
+.button {
+  background-color: var(--color-1) !important;
+  border-radius: 12px !important;
+  color: var(--color-3) !important;
+}
+
+.button:hover {
+  background-color: var(--color-3) !important;
+  color: var(--color-5) !important;
+}
+
 .vote-button {
   height: 50px;
-  background-color: var(--light-blue);
+  background-color: var(--color-4);
   align-content: center;
 }
 
 .hidden {
   display: none !important;
 }
-
- /* The Modal (background) 
- .modal {
-    position: fixed;  /* Stay in place 
-    z-index: 1;  /* Sit on top 
-    left: 0;
-    top: 0;
-    width: 100%;  /* Full width 
-    height: 100%;  /* Full height 
-    overflow: auto;  /* Enable scroll if needed 
-    background-color:  rgb(0,0,0);  /* Fallback color 
-    background-color:  rgba(0,0,0,0.4);  /* Black w/ opacity
-  }
-  
-  /* Modal Content/Box
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;  /* 15% from the top and centered
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;  /* Could be more or less, depending on screen size 
-  }
-  
-   /* The Close Button 
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .close-2 {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close-2:hover,
-  .close-2:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  } */

@@ -45,8 +45,6 @@ var getQuote = function(event) {
     fetch(kwApi).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
-                // console.log(data.quote);
                 var westQuote = data.quote;
                 var displayWestQuote = document.createElement('p');
                 displayWestQuote.textContent = westQuote + " - Kanye West";
@@ -59,8 +57,6 @@ var getQuote = function(event) {
     fetch(rsApi).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
-                // console.log(data[0]);
                 var swansonQuote = data[0];
                 var displaySwansonQuote = document.createElement('p');
                 displaySwansonQuote.textContent = swansonQuote + " - Ron Swanson";
@@ -75,14 +71,11 @@ var getGif = function(event) {
     fetch(kwGif).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
-                // console.log(data.data[0].images.fixed_width.url);
                 var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
-                // console.log(randomWestGif);
                 westGifEl.innerHTML = "";
                 var westGifImg = document.createElement('img');
                 westGifImg.setAttribute('src', randomWestGif);
-                westGifImg.setAttribute('width', '100');
+                westGifImg.setAttribute('width', '175');
                 westGifEl.appendChild(westGifImg);
             })
         }
@@ -92,14 +85,11 @@ var getGif = function(event) {
     fetch(rsGif).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
-                // console.log(data.data[0].images.fixed_width.url);
                 var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
-                // console.log(randomSwansonGif);
                 swansonGifEl.innerHTML = "";
                 var swansonGifImg = document.createElement('img');
                 swansonGifImg.setAttribute('src', randomSwansonGif);
-                swansonGifImg.setAttribute('width', '100');
+                swansonGifImg.setAttribute('width', '175');
                 swansonGifEl.appendChild(swansonGifImg);
             })
         }
@@ -119,8 +109,6 @@ var ronWins = function(event) {
 };
 
 var autoSave = function(event) {
-    // event.preventDefault();
-
     var userScore = {
         kanye: kanyeWinsCounter,
         ron: ronWinsCounter
@@ -128,15 +116,11 @@ var autoSave = function(event) {
 
     vsCounter.pop();
     vsCounter.push(userScore);
-    // console.log(vsCounter);
     localStorage.setItem("score", JSON.stringify(userScore));
 };
 
 var getScores = function(event) {
-
-    // var getPrevScores = localStorage.getItem("score");
     var getPrevScores = JSON.parse(localStorage.getItem("score"));
-    // console.log(getPrevScores.kanye);
 
     if (getPrevScores === null) {
         alert("No Scores!")
@@ -147,35 +131,10 @@ var getScores = function(event) {
             " Ron Swanson has " + getPrevScores.ron + " pts!"
         );
     }
-
-    
-    // var currentScore = document.querySelector("#score");
-    // currentScore.vaLue = vsCounter;
-    // console.log(currentScore);
-
-    // var scoreModal = document.getElementById("scoreModal");
-    // var scoreBtn = scoreBtnEl;
-    // var scoreSpan = document.getElementsByClassName("close-2")[0];
-    // scoreBtn.onlcick = function() {
-    // scoreModal.style.display = "block";
-    // // var showScore = document.querySelector("#score");
-    // // showScore.innerHTML = vsCounter;
-    // }
-    // scoreSpan.onclick = function() {
-    //     scoreModal.style.display = "none";
-    // }
-    // window.onclick = function(event) {
-    //     if (event.target == scoreModal) {
-    //         scoreModal.style.display = "none";
-    //     }
-    // }
-
-
-    
 };
 
 // MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_
-// MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_
+
     // Get the modal
     var modal = document.getElementById("modal");
 
@@ -199,30 +158,7 @@ var getScores = function(event) {
     btnRs.onclick = function() {
     }
 
-    // When the user clicks on <span> (x), close the modal
-    //span.onclick = function() {
-    //modal.style.display = "none";
-   // }
-
-    // When the user clicks anywhere outside of the modal, close it
-    //window.onclick = function(event) {
-    //if (event.target == modal) {
-   //     modal.style.display = "none";
-    //}
-    //}
-
-
-
-
-
-
-
-
 // click button event
 searchBtnEl.addEventListener("click", btnHandler, getQuote, getGif);
-
-//scoreBtnEl.addEventListener("click", getScores);
-
-
 kanyeVoteBtnEl.addEventListener("click", kanyeWins);
 ronVoteBtnEl.addEventListener("click", ronWins);
