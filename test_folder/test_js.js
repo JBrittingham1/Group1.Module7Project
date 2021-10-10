@@ -1,13 +1,13 @@
 var kwApi = 'https://api.kanye.rest/';
 var rsApi = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
+var kwGif = 'https://api.giphy.com/v1/gifs/search?q=kanye-west&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
+var rsGif = 'https://api.giphy.com/v1/gifs/search?q=ron-swanson&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
+
 searchBtnEl = document.querySelector("#getQuote");
 scoreBtnEl = document.querySelector("#getScore");
 
 var westQuoteEl = document.querySelector("#westQuote");
 var swansonQuoteEl = document.querySelector("#swansonQuote");
-
-var kwGif = 'https://api.giphy.com/v1/gifs/search?q=kanye-west&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
-var rsGif = 'https://api.giphy.com/v1/gifs/search?q=ron-swanson&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
 
 var westGifEl = document.querySelector("#westGiphy");
 var swansonGifEl = document.querySelector("#swansonGiphy");
@@ -23,7 +23,7 @@ var vsCounter = [];
 var btnHandler = function(event) {
     westQuoteEl.textContent = "";
     swansonQuoteEl.textContent = "";
-
+    displayVoteButtons();
     getQuote();
     getGif();
 }
@@ -31,6 +31,12 @@ var btnHandler = function(event) {
 var getScoreHandler = function(event) {
     getScores();
 };
+
+//function to display vote buttons
+var displayVoteButtons = function(event) {
+    kanyeVoteBtnEl.classList.remove('hidden');
+    ronVoteBtnEl.classList.remove('hidden');
+}
 
 // function to get quotes
 var getQuote = function(event) {
@@ -71,13 +77,13 @@ var getGif = function(event) {
             response.json().then(function(data) {
                 // console.log(data);
                 // console.log(data.data[0].images.fixed_width.url);
-                var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_width.url;
+                var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 // console.log(randomWestGif);
                 westGifEl.innerHTML = "";
                 var westGifImg = document.createElement('img');
                 westGifImg.setAttribute('src', randomWestGif);
+                westGifImg.setAttribute('width', '100');
                 westGifEl.appendChild(westGifImg);
-
             })
         }
     });
@@ -88,11 +94,12 @@ var getGif = function(event) {
             response.json().then(function(data) {
                 // console.log(data);
                 // console.log(data.data[0].images.fixed_width.url);
-                var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_width.url;
+                var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 // console.log(randomSwansonGif);
                 swansonGifEl.innerHTML = "";
                 var swansonGifImg = document.createElement('img');
                 swansonGifImg.setAttribute('src', randomSwansonGif);
+                swansonGifImg.setAttribute('width', '100');
                 swansonGifEl.appendChild(swansonGifImg);
             })
         }
@@ -101,22 +108,13 @@ var getGif = function(event) {
 
 var kanyeWins = function(event) {
     kanyeWinsCounter++;
-    // console.log(kanyeWinsCounter);
-    // alert("Kanye wins this time! Who'll win next? Click 'Get Quote'");
     var kanyeWon = document.querySelector("#winnerName");
-    kanyeWon.innerHTML = "Kanye";
-
     autoSave();
 };
 
 var ronWins = function(event) {
     ronWinsCounter++;
-    // console.log(ronWinsCounter);
-    // alert("Ron wins this time! Who'll win next? Click 'Get Quote'");
     var ronWon = document.querySelector("#winnerName");
-    ronWon.innerHTML = "Ron";
-
-
     autoSave();
 };
 
@@ -150,82 +148,14 @@ var getScores = function(event) {
         );
     }
 
-    
-    // var currentScore = document.querySelector("#score");
-    // currentScore.vaLue = vsCounter;
-    // console.log(currentScore);
 
-    // var scoreModal = document.getElementById("scoreModal");
-    // var scoreBtn = scoreBtnEl;
-    // var scoreSpan = document.getElementsByClassName("close-2")[0];
-    // scoreBtn.onlcick = function() {
-    // scoreModal.style.display = "block";
-    // // var showScore = document.querySelector("#score");
-    // // showScore.innerHTML = vsCounter;
-    // }
-    // scoreSpan.onclick = function() {
-    //     scoreModal.style.display = "none";
-    // }
-    // window.onclick = function(event) {
-    //     if (event.target == scoreModal) {
-    //         scoreModal.style.display = "none";
-    //     }
-    // }
-
-
-    
 };
-
-// MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_
-// MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_
-    // Get the modal
-    var modal = document.getElementById("modal");
-
-    // Get the KANYE button that opens the modal
-    var btnKw = kanyeVoteBtnEl;
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btnKw.onclick = function() {
-    modal.style.display = "block";
-    }
-
-    // Get the RON button that opens the modal
-    var btnRs = ronVoteBtnEl;
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btnRs.onclick = function() {
-    modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    }
-
-
-
-
-
-
 
 
 // click button event
 searchBtnEl.addEventListener("click", btnHandler, getQuote, getGif);
 
-scoreBtnEl.addEventListener("click", getScores);
+//scoreBtnEl.addEventListener("click", getScores);
 
 
 kanyeVoteBtnEl.addEventListener("click", kanyeWins);
