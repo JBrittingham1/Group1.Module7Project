@@ -108,22 +108,13 @@ var getGif = function(event) {
 
 var kanyeWins = function(event) {
     kanyeWinsCounter++;
-    // console.log(kanyeWinsCounter);
-    // alert("Kanye wins this time! Who'll win next? Click 'Get Quote'");
     var kanyeWon = document.querySelector("#winnerName");
-    kanyeWon.innerHTML = "Kanye";
-
     autoSave();
 };
 
 var ronWins = function(event) {
     ronWinsCounter++;
-    // console.log(ronWinsCounter);
-    // alert("Ron wins this time! Who'll win next? Click 'Get Quote'");
     var ronWon = document.querySelector("#winnerName");
-    ronWon.innerHTML = "Ron";
-
-
     autoSave();
 };
 
@@ -196,7 +187,6 @@ var getScores = function(event) {
 
     // When the user clicks on the button, open the modal
     btnKw.onclick = function() {
-    modal.style.display = "block";
     }
 
     // Get the RON button that opens the modal
@@ -207,7 +197,6 @@ var getScores = function(event) {
 
     // When the user clicks on the button, open the modal
     btnRs.onclick = function() {
-    modal.style.display = "block";
     }
 
     // When the user clicks on <span> (x), close the modal
