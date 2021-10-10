@@ -1,6 +1,5 @@
 # Modern Day Philosopher
 
-
 ## Introduction
 This group project was designed as a homework assignment for Rutgers Coding Boot Camp. We were required to create an interactive website that used at least two server-side APIs and met all of the acceptance criteria (see Acceptance Criteria below).
 
@@ -13,8 +12,13 @@ All code was written from scratch.
 No installation required (see Deployed below).
 
 ## Screenshots
-![Screenshot of deployed app](./)
+![Screenshot of deployed app](./assets/images/screenshot-01.png "Modern Day Philosopher (1 of 4)")
+![Screenshot of deployed app](./assets/images/screenshot-02.png "Modern Day Philosopher (2 of 4)")
+![Screenshot of deployed app](./assets/images/screenshot-03.png "Modern Day Philosopher (3 of 4)")
+![Screenshot of deployed app](./assets/images/screenshot-04.png "Modern Day Philosopher (4 of 4)")
 ## Deployed
+* Deployed application: 
+* Github repository:
 
 ## Features
 * HTML
