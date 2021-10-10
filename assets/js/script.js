@@ -1,53 +1,31 @@
-var kwApi = 'https://api.kanye.rest/';
-var rsApi = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
-searchBtnEl = document.querySelector("#getQuote");
-scoreBtnEl = document.querySelector("#getScore");
+const kwApi = 'https://api.kanye.rest/';
+const rsApi = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
+const kwGif = 'https://api.giphy.com/v1/gifs/search?q=kanye-west&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
+const rsGif = 'https://api.giphy.com/v1/gifs/search?q=ron-swanson&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
 
-var westQuoteEl = document.querySelector("#westQuote");
-var swansonQuoteEl = document.querySelector("#swansonQuote");
+const searchBtnEl = document.querySelector("#getQuote");
+const westQuoteEl = document.querySelector("#westQuote");
+const swansonQuoteEl = document.querySelector("#swansonQuote");
+const westGifEl = document.querySelector("#westGiphy");
+const swansonGifEl = document.querySelector("#swansonGiphy");
+const kanyeVoteBtnEl = document.querySelector("#kanyeVote");
+const ronVoteBtnEl = document.querySelector("#ronVote");
+const kanyeScoreEl = document.querySelector('#kanye-score');
+const ronScoreEl = document.querySelector('#ron-score');
 
-var kwGif = 'https://api.giphy.com/v1/gifs/search?q=kanye-west&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
-var rsGif = 'https://api.giphy.com/v1/gifs/search?q=ron-swanson&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
+let kanyeWinsCounter = 0;
+let ronWinsCounter = 0;
 
-var westGifEl = document.querySelector("#westGiphy");
-var swansonGifEl = document.querySelector("#swansonGiphy");
-
-
-kanyeVoteBtnEl = document.querySelector("#kanyeVote");
-ronVoteBtnEl = document.querySelector("#ronVote");
-var kanyeWinsCounter = 0;
-var ronWinsCounter = 0;
-var vsCounter = [];
-
-
-var btnHandler = function(event) {
-    westQuoteEl.textContent = "";
-    swansonQuoteEl.textContent = "";
-    displayVoteButtons();
-    getQuote();
-    getGif();
-}
-
-var getScoreHandler = function(event) {
-    getScores();
-};
-
-//function to display vote buttons
-var displayVoteButtons = function(event) {
-    kanyeVoteBtnEl.classList.remove('hidden');
-    ronVoteBtnEl.classList.remove('hidden');
-}
-
-// function to get quotes
-var getQuote = function(event) {
+searchBtnEl.addEventListener('click', function(){
+    searchBtnEl.classList.add('hidden');
 
     // fetch kanye quote
     fetch(kwApi).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                var westQuote = data.quote;
-                var displayWestQuote = document.createElement('p');
-                displayWestQuote.textContent = westQuote + " - Kanye West";
+                let westQuote = data.quote;
+                let displayWestQuote = document.createElement('p');
+                displayWestQuote.textContent = '"' + westQuote + '"';
                 westQuoteEl.appendChild(displayWestQuote);
             })
         }
@@ -57,23 +35,21 @@ var getQuote = function(event) {
     fetch(rsApi).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                var swansonQuote = data[0];
-                var displaySwansonQuote = document.createElement('p');
-                displaySwansonQuote.textContent = swansonQuote + " - Ron Swanson";
+                let swansonQuote = data[0];
+                let displaySwansonQuote = document.createElement('p');
+                displaySwansonQuote.textContent = '"' + swansonQuote + '"';
                 swansonQuoteEl.appendChild(displaySwansonQuote);
             })
         }
     });
-};
 
-var getGif = function(event) {
     // fetch kanye gif
     fetch(kwGif).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                var randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
+                let randomWestGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 westGifEl.innerHTML = "";
-                var westGifImg = document.createElement('img');
+                let westGifImg = document.createElement('img');
                 westGifImg.setAttribute('src', randomWestGif);
                 westGifImg.setAttribute('width', '175');
                 westGifEl.appendChild(westGifImg);
@@ -85,29 +61,51 @@ var getGif = function(event) {
     fetch(rsGif).then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                var randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
+                let randomSwansonGif = data.data[Math.floor(Math.random()*data.data.length)].images.fixed_height.url;
                 swansonGifEl.innerHTML = "";
-                var swansonGifImg = document.createElement('img');
+                let swansonGifImg = document.createElement('img');
                 swansonGifImg.setAttribute('src', randomSwansonGif);
                 swansonGifImg.setAttribute('width', '175');
                 swansonGifEl.appendChild(swansonGifImg);
             })
         }
     });
-};
 
-var kanyeWins = function(event) {
+    kanyeVoteBtnEl.classList.remove('hidden');
+    ronVoteBtnEl.classList.remove('hidden');
+});
+
+function kanyeWins(){
     kanyeWinsCounter++;
-    var kanyeWon = document.querySelector("#winnerName");
-    autoSave();
+    console.log(kanyeWinsCounter);
+    kanyeScoreEl.innerHTML = kanyeWinsCounter;
+    clearContent();
 };
 
-var ronWins = function(event) {
+function ronWins(){
     ronWinsCounter++;
-    var ronWon = document.querySelector("#winnerName");
-    autoSave();
+    console.log(ronWinsCounter);
+    ronScoreEl.innerHTML = ronWinsCounter;
+    clearContent();
 };
 
+function clearContent(){
+    westQuoteEl.textContent = "";
+    westGifEl.innerHTML = "";
+    swansonQuoteEl.textContent = "";
+    swansonGifEl.innerHTML = "";
+    kanyeVoteBtnEl.classList.add('hidden');
+    ronVoteBtnEl.classList.add('hidden');
+    searchBtnEl.classList.remove('hidden');
+};
+
+
+
+kanyeVoteBtnEl.addEventListener('click', kanyeWins);
+ronVoteBtnEl.addEventListener('click', ronWins);
+
+
+/*
 var autoSave = function(event) {
     var userScore = {
         kanye: kanyeWinsCounter,
@@ -132,33 +130,4 @@ var getScores = function(event) {
         );
     }
 };
-
-// MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_MODAL_
-
-    // Get the modal
-    var modal = document.getElementById("modal");
-
-    // Get the KANYE button that opens the modal
-    var btnKw = kanyeVoteBtnEl;
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btnKw.onclick = function() {
-    }
-
-    // Get the RON button that opens the modal
-    var btnRs = ronVoteBtnEl;
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btnRs.onclick = function() {
-    }
-
-// click button event
-searchBtnEl.addEventListener("click", btnHandler, getQuote, getGif);
-kanyeVoteBtnEl.addEventListener("click", kanyeWins);
-ronVoteBtnEl.addEventListener("click", ronWins);
+*/
