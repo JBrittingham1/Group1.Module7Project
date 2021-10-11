@@ -21,8 +21,8 @@ No installation required (see Deployed below).
 ![Screenshot of deployed app](./assets/images/screenshot-03.png "Modern Day Philosopher (3 of 4)")
 ![Screenshot of deployed app](./assets/images/screenshot-04.png "Modern Day Philosopher (4 of 4)")
 ## Deployed
-* Deployed application: 
-* Github repository:
+* Deployed application: https://jbginger.github.io/Group1.Module7Project/
+* Github repository: https://github.com/JBGinger/Group1.Module7Project
 
 ## Features
 * HTML
