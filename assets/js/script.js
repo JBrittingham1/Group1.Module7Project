@@ -77,6 +77,7 @@ function getQuotesAndGifs() {
 
     kanyeVoteBtnEl.classList.remove('hidden');
     ronVoteBtnEl.classList.remove('hidden');
+    clearScoresBtn.classList.remove('hidden');
 };
 
 function kanyeWins(){
