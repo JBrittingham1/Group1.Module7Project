@@ -1,9 +1,8 @@
 :root {
   --color-1: #4059ad;
-  --color-2: #219ebc;
-  --color-3: #0d1321;
-  --color-4: #30343f;
-  --color-5: #e4dfda;
+  --color-2: #0d1321;
+  --color-3: #30343f;
+  --color-4: #e4dfda;
 }
 
 body {
@@ -11,8 +10,8 @@ body {
 }
 
 .title {
-  background-color: var(--color-3) !important;
-  color: var(--color-5) !important;
+  background-color: var(--color-2) !important;
+  color: var(--color-4) !important;
 }
 
 .quote-cards {
@@ -21,13 +20,13 @@ body {
 
 .card {
   max-height: 750px;
-  background-color: var(--color-3);
+  background-color: var(--color-2);
   border: none !important;
 }
 
 .card-divider {
-  background-color: var(--color-3) !important;
-  color: var(--color-5);
+  background-color: var(--color-2) !important;
+  color: var(--color-4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,10 +35,10 @@ body {
 
 .quoteBox {
   height: 190px;
-  background-color: var(--color-4);
+  background-color: var(--color-3);
   display: flex;
   padding: 5px;
-  color: var(--color-5);
+  color: var(--color-4);
   justify-content: center;
   align-items: center;
 }
@@ -56,7 +55,7 @@ body {
   height: 245px;
   object-fit: contain;
   align-content: center;
-  background-color: var(--color-4);
+  background-color: var(--color-3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,8 +63,8 @@ body {
 
 .scorecard {
   height: 150px;
-  background-color: var(--color-4) !important;
-  color: var(--color-5) !important;
+  background-color: var(--color-3) !important;
+  color: var(--color-4) !important;
 }
 
 .score-display {
@@ -83,17 +82,17 @@ body {
 .button {
   background-color: var(--color-1) !important;
   border-radius: 12px !important;
-  color: var(--color-3) !important;
+  color: var(--color-2) !important;
 }
 
 .button:hover {
-  background-color: var(--color-3) !important;
-  color: var(--color-5) !important;
+  background-color: var(--color-2) !important;
+  color: var(--color-4) !important;
 }
 
 .vote-button {
   height: 50px;
-  background-color: var(--color-4);
+  background-color: var(--color-3);
   align-content: center;
 }
 

@@ -16,7 +16,11 @@ const ronScoreEl = document.querySelector('#ron-score');
 let kanyeWinsCounter = 0;
 let ronWinsCounter = 0;
 
-searchBtnEl.addEventListener('click', function(){
+searchBtnEl.addEventListener('click', function() {
+    getQuotesAndGifs();
+})
+
+function getQuotesAndGifs() {
     searchBtnEl.classList.add('hidden');
 
     // fetch kanye quote
@@ -73,7 +77,7 @@ searchBtnEl.addEventListener('click', function(){
 
     kanyeVoteBtnEl.classList.remove('hidden');
     ronVoteBtnEl.classList.remove('hidden');
-});
+};
 
 function kanyeWins(){
     kanyeWinsCounter++;
@@ -94,9 +98,7 @@ function clearContent(){
     westGifEl.innerHTML = "";
     swansonQuoteEl.textContent = "";
     swansonGifEl.innerHTML = "";
-    kanyeVoteBtnEl.classList.add('hidden');
-    ronVoteBtnEl.classList.add('hidden');
-    searchBtnEl.classList.remove('hidden');
+    getQuotesAndGifs();
 };
 
 clearScoresBtn.addEventListener('click', function(){
@@ -108,31 +110,3 @@ clearScoresBtn.addEventListener('click', function(){
 
 kanyeVoteBtnEl.addEventListener('click', kanyeWins);
 ronVoteBtnEl.addEventListener('click', ronWins);
-
-
-/*
-var autoSave = function(event) {
-    var userScore = {
-        kanye: kanyeWinsCounter,
-        ron: ronWinsCounter
-    };
-
-    vsCounter.pop();
-    vsCounter.push(userScore);
-    localStorage.setItem("score", JSON.stringify(userScore));
-};
-
-var getScores = function(event) {
-    var getPrevScores = JSON.parse(localStorage.getItem("score"));
-
-    if (getPrevScores === null) {
-        alert("No Scores!")
-        vsCounter = [];
-    } else {
-        alert(
-            "Kanye West has " + getPrevScores.kanye + " pts!" + 
-            " Ron Swanson has " + getPrevScores.ron + " pts!"
-        );
-    }
-};
-*/
