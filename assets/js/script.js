@@ -1,5 +1,5 @@
 const kwApi = 'https://api.kanye.rest/';
-const rsApi = 'http://ron-swanson-quotes.herokuapp.com/v2/quotes';
+const rsApi = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
 const kwGif = 'https://api.giphy.com/v1/gifs/search?q=kanye-west&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
 const rsGif = 'https://api.giphy.com/v1/gifs/search?q=ron-swanson&api_key=p8XQjyndOC4ycMWcXs2q7C3OCZks2J92';
 const clearScoresBtn = document.querySelector('#clear-scores');
