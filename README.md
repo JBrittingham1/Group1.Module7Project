@@ -43,9 +43,9 @@ No installation required (see Deployed below).
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ## Project Insight
-* Darell:
+* Darnell: Our primary challenge in this project was coordinating the efforts of our group members in a productive way. When planning the project, we had to collaborate to come up with ideas that fulfilled the project requirements, and were doable. We also ran into significant trouble figuring out how to manage the work of three people on the same GitHub repository.
 
-* Jeff:
+* Jeff: This project challenged me (and I suspect the others in my group) in a way that was unique when compared to our normal weekly assignments. Most notably - I learned that I did not understand GitHub nearly as well as I thought I did. The process of creating individual branches for each group member and merging them coherently was trickier than expected. In addition to these difficulties, this project required that I learn a new CSS framework (I chose one called "Foundation") besides bootstrap. Unfortunately, Foundation proved to be less intiutive than I had hoped it would be, and I had significant difficulty getting the page elements to display properly at first.
 
 * Peter: The process of multiple people working indiviually and on the same project was a new problem to deal with and in my opinion was one of the more, if not the most, difficult parts of the project. When working with my partners after we started sharing the changes we'd made I realized we all think about the process of the development differently and we all code a little differently. That was just a new process to get adjusted to.
 
