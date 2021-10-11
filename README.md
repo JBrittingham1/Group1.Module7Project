@@ -1,12 +1,16 @@
 # Modern Day Philosopher
 
 ## Introduction
+Have you ever wondered who would win in a battle between two of the greatest philosophers of our time?
+
+Oh, you were thinking Kanye West and Ron Swanson? Well us too! Have no worries because we have created the solution. We developed this site for our two modern day philosophers to battle it out for bragging rights.
+
+Click the 'Get Quotes' button, have a laugh, relive some stress, pick a winner...
+
+## Description
 This group project was designed as a homework assignment for Rutgers Coding Boot Camp. We were required to create an interactive website that used at least two server-side APIs and met all of the acceptance criteria (see Acceptance Criteria below).
 
 All code was written from scratch.
-
-## Description
-{Have you ever wondered...yada ya.}
 
 ## Installation
 No installation required (see Deployed below).
@@ -43,7 +47,7 @@ No installation required (see Deployed below).
 
 * Jeff:
 
-* Peter:
+* Peter: The process of multiple people working indiviually and on the same project was a new problem to deal with and in my opinion was one of the more, if not the most, difficult parts of the project. 
 
 ## Authors
 Jeffrey Brittingham, Darnell Davy, Peter Warren
