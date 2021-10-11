@@ -47,7 +47,7 @@ No installation required (see Deployed below).
 
 * Jeff:
 
-* Peter: The process of multiple people working indiviually and on the same project was a new problem to deal with and in my opinion was one of the more, if not the most, difficult parts of the project. 
+* Peter: The process of multiple people working indiviually and on the same project was a new problem to deal with and in my opinion was one of the more, if not the most, difficult parts of the project. When working with my partners after we started sharing the changes we'd made I realized we all think about the process of the development differently and we all code a little differently. That was just a new process to get adjusted to.
 
 ## Authors
 Jeffrey Brittingham, Darnell Davy, Peter Warren
